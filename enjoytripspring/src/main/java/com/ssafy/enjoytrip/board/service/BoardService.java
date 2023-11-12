@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a95ce9d389accc1a0cd60f1cec3437352f779cdd8effa9dcc7940573aaacaf4
-size 528
+package com.ssafy.enjoytrip.board.service;
+
+import java.util.List;
+import java.util.Map;
+
+import com.ssafy.enjoytrip.board.model.dto.BoardDto;
+import com.ssafy.enjoytrip.util.PageNavigation;
+
+public interface BoardService {
+
+	List<BoardDto> listArticle();
+	PageNavigation makePageNavigation(Map<String, String> map);
+	BoardDto getArticle(int articleNo);
+	void updateHit(int articleNo);
+	
+	void modifyArticle(BoardDto boardDto);
+	void deleteArticle(int articleNo);
+	void writeArticle(BoardDto boardDto);	
+}
