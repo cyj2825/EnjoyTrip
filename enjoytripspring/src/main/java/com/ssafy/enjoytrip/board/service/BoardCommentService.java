@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:47a15a5472a6b5a19cf65b94013beee990eea73d9a3cc48079cad0010c1e60ee
-size 506
+package com.ssafy.enjoytrip.board.service;
+
+import java.util.List;
+import java.util.Map;
+
+import com.ssafy.enjoytrip.board.model.dto.BoardCommentDto;
+import com.ssafy.enjoytrip.util.PageNavigation;
+
+public interface BoardCommentService {
+	List<BoardCommentDto> listComment(int articleNo);
+	PageNavigation makePageNavigation(Map<String, String> map);
+	void writeComment(BoardCommentDto boardCommentDto);
+	void modifyComment(BoardCommentDto boardCommentDto);
+	void deleteComment(int articleNo, int commentNo); 
+}
