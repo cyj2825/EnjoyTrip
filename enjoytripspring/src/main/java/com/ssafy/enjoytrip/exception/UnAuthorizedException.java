@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4973fdfbadd421b59c35227f8933a4b5f097e7f8e071296b6305ac462817f0bb
-size 283
+package com.ssafy.enjoytrip.exception;
+
+public class UnAuthorizedException extends RuntimeException {
+	
+	private static final long serialVersionUID = 1L;
+
+	public UnAuthorizedException() {
+		super("계정 권한이 유효하지 않습니다.\n다시 로그인을 하세요.");
+	}
+
+}
