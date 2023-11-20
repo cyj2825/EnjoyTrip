@@ -1,18 +1,3 @@
-// import "./assets/main.css";
-
-import { createApp } from "vue";
-import Antd from 'ant-design-vue';
-import { createPinia } from "pinia";
-
-import App from "./App.vue";
-import router from "./router";
-import 'ant-design-vue/dist/reset.css';
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap";
-
-const app = createApp(App);
-
-app.use(createPinia());
-app.use(router);
-
-app.use(Antd).mount("#app");
+version https://git-lfs.github.com/spec/v1
+oid sha256:bea37c7a51c6bebef1524d5f81e1570b3ae7d5d6d36cc7b9f2abd1d156217b5f
+size 412
