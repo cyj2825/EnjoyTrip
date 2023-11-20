@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.enjoytrip.plan.model.dao.PlanDao">
+	<insert id="writePlan" parameterType="PlanDto" useGeneratedKeys="true" keyProperty="planNo">
+		insert into plan(title, endDate, startDate,userId)
+		values(#{title},#{endDate},#{startDate},#{userId})
+	</insert>
+</mapper>

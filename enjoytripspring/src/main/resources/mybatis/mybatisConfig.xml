@@ -9,4 +9,5 @@
 	<mappers>
 		<mapper resource="mybatis/mapper/MemberMapper.xml"/>
 	</mappers>
+
 </configuration>
