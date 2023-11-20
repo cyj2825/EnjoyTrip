@@ -1,12 +1,11 @@
 <script setup>
-import BoardFormItem from "./item/BoardFormItem.vue";
+import MemberFormItem from "./item/MemberFormItem.vue";
 </script>
 
 <template>
   <div class="container">
-    
       <div class="col-lg-10 text-start">
-        <BoardFormItem type="modify" />
+        <MemberFormItem type="regist" />
       </div>
   </div>
 </template>
