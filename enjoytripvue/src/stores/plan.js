@@ -4,9 +4,14 @@ import { defineStore } from "pinia";
 export const usePlanStore = defineStore("planStore", ()=>{
     const planTitle = ref('');
     const totalDays = ref('');
+    const startDate = ref('');
+    const endDate = ref('');
 
     return {
         planTitle,
-        totalDays
+        totalDays,
+        startDate,
+        endDate
     }
-})
+},
+{persist: true})
