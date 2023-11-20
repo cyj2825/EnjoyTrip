@@ -3,11 +3,7 @@ import MemberFormItem from "./item/MemberFormItem.vue";
 </script>
 
 <template>
-  <div class="container">
-      <div class="col-lg-10 text-start">
-        <MemberFormItem type="regist" />
-      </div>
-  </div>
+<MemberFormItem type="regist" />
 </template>
 
 <style scoped></style>
