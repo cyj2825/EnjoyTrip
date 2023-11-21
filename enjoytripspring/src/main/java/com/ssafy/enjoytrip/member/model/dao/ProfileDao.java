@@ -12,6 +12,6 @@ import com.ssafy.enjoytrip.member.model.dto.ProfileImgDto;
 @Mapper
 public interface ProfileDao {
 	void insertImg(ProfileImgDto profileImgDto) throws SQLException;
-//	void updateMember(MemberDto memberDto);
+	String getImg(String userId) throws SQLException;
 //	void deleteMember(String userId);
 }

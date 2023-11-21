@@ -4,6 +4,6 @@ import com.ssafy.enjoytrip.member.model.dto.ProfileImgDto;
 
 public interface ProfileService {
 	void insertImg(ProfileImgDto profileImgDto);
-//	void updateMember(MemberDto memberDto);
+	String getImg(String userId);
 //	void deleteMember(String userId);
 }
