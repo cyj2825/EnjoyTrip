@@ -7,7 +7,7 @@ import com.ssafy.enjoytrip.plan.model.dto.PlanDto;
 import com.ssafy.enjoytrip.util.PageNavigation;
 
 public interface PlanService {
-	int writePlan(PlanDto planDto);
+	void writePlan(PlanDto planDto);
 	List<PlanDto> listPlan(Map<String, Object> param);
 	PlanDto getPlan(int plan_no);
 	void modifyPlan(PlanDto planDto);
