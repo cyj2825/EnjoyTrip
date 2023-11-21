@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:421600721725e7360b4f887491320cece009a9aea9b89289e777d045f60524f8
-size 1502
+<script setup>
+defineProps({ article: Object });
+// const URL = article.mainImg;
+const title = article.subject;
+</script>
+
+<template>
+  <a-card hoverable :style="{ width: '250px', margin: '20px' }">
+    <template #cover>
+      <!-- <img :src="URL" /> -->
+    </template>
+    <a-card-meta :title="title">
+      <template #description>{{ article.content }}</template>
+    </a-card-meta>
+  </a-card>
+</template>
+
+<style scoped></style>
