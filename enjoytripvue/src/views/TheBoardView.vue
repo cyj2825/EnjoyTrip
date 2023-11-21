@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f3cc40e77b41679e041dc91b44c28c07ac64c1563d27649a1b1bbde163cf1670
-size 232
+<script setup></script>
+
+<template>
+  <div class="container text-center mt-3">
+    <router-view></router-view>
+  </div>
+</template>
+
+<style>
+mark.sky {
+  background: linear-gradient(to top, #54fff9 20%, transparent 30%);
+}
+</style>
