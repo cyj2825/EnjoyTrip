@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9797a6f235acaaac5d4af31ffa8abaab2a31efe4879041c5a7f8e19c0c37b450
-size 441
+package com.ssafy.enjoytrip.member.model.dto;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+@ApiModel(value="ProfileImg Dto" ,description="프로필 이미지를 구성하는 DTO")
+@Data
+public class ProfileImgDto {
+	@ApiModelProperty(value="사용자 ID", example="Yejin")
+	private String userId;
+	@ApiModelProperty(value = "프로필 이미지")
+	private String profileImg;
+}

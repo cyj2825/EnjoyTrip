@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:09d156c806ad2d93521b3e9d3360df5127fbe9946edf8514f89db4f41cc1ccdb
-size 298
+package com.ssafy.enjoytrip.plan.model.dao;
+
+import java.sql.SQLException;
+import com.ssafy.enjoytrip.plan.model.dto.PlanDateDetailDto;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface PlanDateDetailDao {
+    void insertPlanDate(PlanDateDetailDto dto) throws SQLException;
+
+}
