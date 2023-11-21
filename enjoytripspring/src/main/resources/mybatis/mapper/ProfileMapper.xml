@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:22c0df02cba8dc67104e02906e312905977c19416503023f846f3c426db095f9
-size 374
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.ssafy.enjoytrip.member.model.dao.ProfileDao">
+	
+	<insert id="insertImg" parameterType="ProfileImgDto">
+		insert into img(userId, profileImg)
+		values(#{userId}, #{profileImg})
+	</insert>
+</mapper>
