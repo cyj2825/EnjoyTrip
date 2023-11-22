@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea9bf0fc07343cf4e59fdb2ea9793512e18d93ea605b238d9b111e3f040d52ad
-size 305
+package com.ssafy.enjoytrip.plan.model.service;
+
+import com.ssafy.enjoytrip.plan.model.dto.PlanTimeDetailDto;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public interface PlanTimeDetailService {
+    void insertTime(PlanTimeDetailDto dto);
+    List<PlanTimeDetailDto> getTimeList(int dateNo);
+}
