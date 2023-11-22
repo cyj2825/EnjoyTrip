@@ -1,14 +1,3 @@
-package com.ssafy.enjoytrip.map.service;
-
-import java.util.List;
-
-import com.ssafy.enjoytrip.map.model.dto.GugunDto;
-import com.ssafy.enjoytrip.map.model.dto.MarkerDto;
-import com.ssafy.enjoytrip.map.model.dto.SidoDto;
-
-public interface MapService {
-	
-	List<SidoDto> getSido();
-	List<GugunDto> getGugun(int sidoCode);
-	List<MarkerDto> getMarker(int contentTypeId, int sidoCode, int gugunCode);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:41e3a4fe8d223a2aff01ae1af352aa0fc4216537f09bba011965e9a562d9e463
+size 467
