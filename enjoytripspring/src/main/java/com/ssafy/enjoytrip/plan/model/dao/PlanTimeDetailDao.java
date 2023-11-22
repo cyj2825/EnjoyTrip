@@ -1,11 +1,3 @@
-package com.ssafy.enjoytrip.plan.model.dao;
-
-import com.ssafy.enjoytrip.plan.model.dto.PlanTimeDetailDto;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.jdbc.SQL;
-
-import java.sql.SQLException;
-@Mapper
-public interface PlanTimeDetailDao {
-    void insertPlanTime(PlanTimeDetailDto timeDto) throws SQLException;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:cedfb6d50554a0bd7c15469bf2d1c198e28d57bb8b4ea5376a1bc5f3d01c56a2
+size 433
