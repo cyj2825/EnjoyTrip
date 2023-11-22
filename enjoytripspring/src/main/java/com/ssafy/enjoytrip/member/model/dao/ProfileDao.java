@@ -1,17 +1,3 @@
-package com.ssafy.enjoytrip.member.model.dao;
-
-import java.sql.SQLException;
-import java.util.Map;
-
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.web.multipart.MultipartFile;
-
-import com.ssafy.enjoytrip.member.model.dto.MemberDto;
-import com.ssafy.enjoytrip.member.model.dto.ProfileImgDto;
-
-@Mapper
-public interface ProfileDao {
-	void insertImg(ProfileImgDto profileImgDto) throws SQLException;
-	String getImg(String userId) throws SQLException;
-//	void deleteMember(String userId);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0d67bd34e4ef6f0a33f892c94b2d07f37250beadfebca0b1c46fbb412bbc040c
+size 577
