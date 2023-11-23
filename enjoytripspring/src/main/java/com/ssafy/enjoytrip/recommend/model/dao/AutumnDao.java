@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93c2f9fd8301071691ee41d35f344f8e436d9f5c7b2557b42976863f5937b7c1
-size 480
+package com.ssafy.enjoytrip.recommend.model.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.ssafy.enjoytrip.recommend.model.dto.AutumnDto;
+import com.ssafy.enjoytrip.recommend.model.dto.SpringDto;
+import com.ssafy.enjoytrip.recommend.model.dto.SummerDto;
+
+@Mapper
+public interface AutumnDao {
+	List<AutumnDto> listAutumnPlace() throws SQLException;
+	AutumnDto getAutumnPlace(int autumnNo) throws SQLException;
+}

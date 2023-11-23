@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:071228aab746d3984639983ec122eae32f4372bbe543ad00557b6c51f627a263
-size 364
+package com.ssafy.enjoytrip.recommend.model.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.ssafy.enjoytrip.recommend.model.dto.SpringDto;
+
+@Mapper
+public interface SpringDao {
+	List<SpringDto> listSpringPlace() throws SQLException;
+	SpringDto getSpringPlace(int springNo) throws SQLException;
+}
