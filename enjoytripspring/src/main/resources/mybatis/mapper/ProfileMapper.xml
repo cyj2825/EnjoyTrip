@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:601c091af25f6395ec41acafc402861cfaab25c473c2d600bdb35c47b3f7af7b
-size 671
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.ssafy.enjoytrip.member.model.dao.ProfileDao">
+	
+	<insert id="insertImg" parameterType="ProfileImgDto">
+		insert into img(userId, profileImg)
+		values(#{userId}, #{profileImg})
+	</insert>
+	
+	<select id="getImg" parameterType="String" resultType="String">
+    	select profileImg
+    	from img
+    	where userId = #{userId}
+    </select>
+    
+    <update id="updateImg" parameterType="ProfileImgDto">
+    	update img set profileImg=#{profileImg}
+    	where userId=#{userId}
+    </update>
+</mapper>

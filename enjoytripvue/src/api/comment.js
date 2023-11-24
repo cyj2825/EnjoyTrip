@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81dc47d326cacebabd808a35f28d5d22f65b0ac5af9612bb073ab83ad5b0c135
-size 770
+import { localAxios } from "@/util/http-commons";
+
+const local = localAxios(); // axios instance
+
+const url = "/comment";
+function listComment(articleno, success, fail) {
+    local.get(`${url}/${articleno}`).then(success).catch(fail);
+}
+
+function writeComment(comment, success, fail) {
+    console.log("comment.js comment", comment);
+    local.post(`${url}`, JSON.stringify(comment)).then(success).catch(fail);
+}
+function modifyComment(comment, success, fail) {
+    local.put(`${url}`, JSON.stringify(comment)).then(success).catch(fail);
+}
+
+function deleteComment(articleno, commentNo, success, fail) {
+    local.delete(`${url}/${articleno}/${commentNo}`).then(success).catch(fail);
+}
+
+export {
+    listComment,
+    writeComment,
+    modifyComment,
+    deleteComment
+};

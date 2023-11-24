@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:728d279d2d141522b62291e6ec8936d3becd5dc72f4a07b7b56b54b2bb6e62e8
-size 534
+package com.ssafy.enjoytrip.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+
+    /**
+     * BcryptPasswordEncoder
+     * 해싱하는데 시간이 좀 걸림 (해커들의 시도 횟수를 줄이기 위해)
+     * 공부해볼 키워드: bcrypt + salt
+     *
+     * @return
+     */
+	/*
+	 * @Bean public PasswordEncoder passwordEncoder() { return
+	 * PasswordEncoderFactories.createDelegatingPasswordEncoder(); }
+	 */
+
+}

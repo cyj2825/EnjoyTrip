@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c40bdaa3e823c3ad6e62a289383653df1431e918446a836d0c64bea1da201972
-size 554
+package com.ssafy.enjoytrip.plan.model.service;
+
+import java.util.List;
+import java.util.Map;
+
+import com.ssafy.enjoytrip.plan.model.dto.PlanDto;
+import com.ssafy.enjoytrip.util.PageNavigation;
+
+public interface PlanService {
+	void writePlan(PlanDto planDto);
+	List<PlanDto> listPlan(Map<String, Object> param);
+	PlanDto getPlan(int plan_no);
+	void modifyPlan(PlanDto planDto);
+	void deletePlan(int plan_no);
+	PageNavigation makePageNavigation(Map<String, String> map);
+	List<PlanDto> getPlanList(String userId);
+	PlanDto getPlanListById(int planNo);
+
+}

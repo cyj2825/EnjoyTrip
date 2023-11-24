@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93f492bf61e8116d9b6e685fc8c21c6c7a7cbfd908293a2229fa62beeb390160
-size 592
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.enjoytrip.plan.model.dao.PlanDateDetailDao">
+	<insert id="insertPlanDate" parameterType="PlanDateDetailDto" useGeneratedKeys="true" keyProperty="dateNo">
+		insert into plandate(date, planNo)
+		values(#{date}, #{planNo})
+	</insert>
+
+	<select id="getDateList" parameterType="int" resultType="PlanDateDetailDto">
+		select dateNo, planNo, date, dateMemo from plandate
+		where planNo=#{planNo}
+	</select>
+</mapper>

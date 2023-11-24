@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c175dc4330fce72ca9a02c689ea91ebbb85b9f90f811a359777cc5905a179da1
-size 523
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.enjoytrip.recommend.model.dao.SpringDao">
+    
+    <select id="listSpringPlace" resultType="SpringDto">
+    	select *
+    	from spring
+    	order by springNo
+    </select>
+    
+    <select id="getSpringPlace" parameterType="int" resultType="SpringDto">
+    	select *
+    	from spring
+    	where springNo = #{springNo}
+    </select>
+</mapper>

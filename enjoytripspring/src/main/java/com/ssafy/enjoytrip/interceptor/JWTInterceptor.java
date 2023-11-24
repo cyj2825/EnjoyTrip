@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c768c1912af20882ccfbe965f3e633df5676c9941efa5d7dbf423bcd2d4ea8b
-size 1042
+package com.ssafy.enjoytrip.interceptor;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
+
+import com.ssafy.enjoytrip.exception.UnAuthorizedException;
+import com.ssafy.enjoytrip.util.JWTUtil;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Component
+@Slf4j
+public class JWTInterceptor implements HandlerInterceptor {
+
+	private final String HEADER_AUTH = "Authorization";
+	
+	private JWTUtil jwtUtil;
+
+	public JWTInterceptor(JWTUtil jwtUtil) {
+		super();
+		this.jwtUtil = jwtUtil;
+	}
+	
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		final String token = request.getHeader(HEADER_AUTH);
+
+		if (token != null && jwtUtil.checkToken(token)) {
+			log.info("토큰 사용 가능 : {}", token);
+			return true;
+		} else {
+			log.info("토큰 사용 불가능 : {}", token);
+			throw new UnAuthorizedException();
+		}
+	}
+}

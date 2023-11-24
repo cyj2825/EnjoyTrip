@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8a12475c7e07f54d760fcbc50841540f5a76c151a836a6ecca8897d3116f7756
-size 523
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.enjoytrip.recommend.model.dao.WinterDao">
+    
+    <select id="listWinterPlace" resultType="WinterDto">
+    	select *
+    	from winter
+    	order by winterNo
+    </select>
+    
+    <select id="getWinterPlace" parameterType="int" resultType="WinterDto">
+    	select *
+    	from winter
+    	where winterNo = #{winterNo}
+    </select>
+</mapper>

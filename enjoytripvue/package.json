@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:85cabe8cb47953040dc7cc6540ae4d7b02eba8e8f53415d74a2bf57faa440db5
-size 946
+{
+  "name": "board-vue",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@toast-ui/editor": "^3.2.2",
+    "@toast-ui/editor-plugin-code-syntax-highlight": "^3.1.0",
+    "@toast-ui/editor-plugin-color-syntax": "^3.1.0",
+    "ant-design-vue": "^4.0.7",
+    "axios": "^1.6.1",
+    "dayjs": "^1.11.10",
+    "jwt-decode": "^4.0.0",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.0",
+    "postcss": "^8.4.31",
+    "prismjs": "^1.29.0",
+    "tui-color-picker": "^2.2.8",
+    "vue": "^3.3.4",
+    "vue-cookies": "^1.8.3",
+    "vue-router": "^4.2.4",
+    "vuex-persistedstate": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-vue": "^9.15.1",
+    "vite": "^4.4.6"
+  }
+}

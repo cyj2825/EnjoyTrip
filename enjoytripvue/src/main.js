@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0cc9dd5c07fe4e9473d57d41479b56b45083d38df218cb237419d102bfef66fa
-size 672
+// import "./assets/main.css";
+
+import { createApp } from "vue";
+import Antd from 'ant-design-vue';
+import { createPinia } from "pinia";
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+
+import App from "./App.vue";
+import router from "./router";
+import 'ant-design-vue/dist/reset.css';
+import VueCookies from "vue-cookies"
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap";
+
+const app = createApp(App)
+const pinia = createPinia()
+
+app.use(VueCookies);
+pinia.use(piniaPluginPersistedstate)
+
+app.use(pinia)
+// app.use(createPinia().use(piniaPluginPersistedstate));
+app.use(router)
+
+// app.mount('#app')
+app.use(Antd).mount("#app");

@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f1b953115aeb6a8a76c728fe87d436cc05521e2c2177ed6945890562a85bda77
-size 1858
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.enjoytrip.board.model.dao.BoardDao">
+	
+    <insert id="writeArticle" parameterType="BoardDto">
+        insert into board(userId, subject, content, location, startDate, endDate, mainImg, hit) 
+        values(#{userId}, #{subject}, #{content}, #{location}, #{startDate}, #{endDate}, #{mainImg}, #{hit})
+    </insert>
+    
+    <select id="getArticle" parameterType="int" resultType="BoardDto">
+    	select *
+    	from board
+    	where articleNo = #{articleNo}
+
+    </select>
+    
+    <select id="listArticle" parameterType="hashMap" resultType="BoardDto">
+    	select *
+    	from board
+        <choose>
+            <when test='"article_no".equals(key)'>
+                where articleNo = #{word}
+            </when>
+            <when test='"subject".equals(key)'>
+                where subject like concat('%',#{word},'%')
+            </when>
+            <when test='"user_id".equals(key)'>
+                where userId = #{word}
+            </when>
+            <otherwise></otherwise>
+        </choose>
+    	order by articleNo
+    </select>
+    
+    <select id="listMyArticle" parameterType="String"  resultType="BoardDto">
+    	select *
+    	from board
+    	where userId = #{userId}
+    	order by articleNo
+    </select>
+    
+    <update id="modifyArticle" parameterType="BoardDto">
+    	update board set subject=#{subject}, content=#{content}, registerTime=now()
+    	where articleNo=#{articleNo}
+    </update>
+    
+    <delete id="deleteArticle" parameterType="int">
+    	delete from board
+    	where articleNo=#{articleNo}
+    </delete>
+    
+    <update id="updateHit" parameterType="int">
+    	update board set hit=hit+1 where articleNo=#{articleNo}
+    </update>
+</mapper>

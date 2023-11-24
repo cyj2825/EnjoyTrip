@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:efae93f51aebb57d883e4e1fc5039e8b63ca6e6c80ccfa79d0894cafa32263af
-size 522
+import { localAxios } from "@/util/http-commons";
+
+const local = localAxios(); 
+
+const base_url = "hotPlace";
+
+function sidoList(success,fail){
+    local.get(`${base_url}/getSido`).then(success).catch(fail);
+}
+function gugunList(sido_code, success,fail){
+    local.get(`${base_url}/getGugun?sidoCode=${sido_code}`).then(success).catch(fail);
+}
+
+function attList(params, success,fail){
+    local.get(`${base_url}/getMarker`,{params: params}).then(success).catch(fail);
+}
+
+export{
+    sidoList,
+    gugunList,
+    attList
+};

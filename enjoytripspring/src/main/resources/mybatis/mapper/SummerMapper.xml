@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ba3216993c2bcf60daf4abf3e21c07b67b0cf75893762958d72e695c488618e
-size 523
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.enjoytrip.recommend.model.dao.SummerDao">
+    
+    <select id="listSummerPlace" resultType="SummerDto">
+    	select *
+    	from summer
+    	order by summerNo
+    </select>
+    
+    <select id="getSummerPlace" parameterType="int" resultType="SummerDto">
+    	select *
+    	from summer
+    	where summerNo = #{summerNo}
+    </select>
+</mapper>

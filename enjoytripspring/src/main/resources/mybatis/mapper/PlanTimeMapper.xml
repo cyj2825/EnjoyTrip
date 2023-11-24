@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5717602ac8b089fcedd82e2bfdd5159fa6ea41e9dd416b6427828af02891ad0f
-size 563
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.enjoytrip.plan.model.dao.PlanTimeDetailDao">
+	<insert id="insertPlanTime" parameterType="PlanTimeDetailDto">
+		insert into plantime(dateNo, location)
+		values(#{dateNo}, #{location})
+	</insert>
+
+	<select id="getTimeList" parameterType="int" resultType="PlanTimeDetailDto">
+		select timeNo, dateNo, location, timeMemo from plantime
+		where dateNo = #{dateNo}
+	</select>
+
+
+</mapper>

@@ -1,3 +1,59 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8c80bf33a01a83b011a2e2b575c1db3842b36fa99c4cf620c179856953eab86c
-size 2072
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.enjoytrip.map.model.dao.MapDao">
+
+	<resultMap type="SidoDto" id="sido">
+		<result column="sidoCode" property="sidoCode" />
+		<result column="sidoName" property="sidoName" />
+	</resultMap>
+
+	<resultMap type="GugunDto" id="gugun">
+		<result column="sidoCode" property="sidoCode" />
+		<result column="gugunCode" property="gugunCode" />
+		<result column="gugunName" property="gugunName" />
+	</resultMap>
+
+	<resultMap type="MarkerDto" id="marker">
+		<result column="contentId" property="contentId" />
+		<result column="contentTypeId" property="contentTypeId" />
+		<result column="title" property="title" />
+		<result column="addr1" property="addr1" />
+		<result column="addr2" property="addr2" />
+		<result column="firstImage" property="firstImage" />
+		<result column="readCount" property="readCount" />
+		<result column="latitude" property="latitude" />
+		<result column="longitude" property="longitude" />
+		<result column="sidoCode" property="sidoCode" />
+		<result column="gugunCode" property="gugunCode" />
+	</resultMap>
+
+	<select id="getSido" resultMap="sido">
+		select
+		sido_code, sido_name
+		from sido
+	</select>
+
+	<select id="getGugun" parameterType="int" resultMap="gugun">
+		select
+		sido_code, gugun_code, gugun_name
+		from gugun
+		where sido_code = #{sido_code}
+	</select>
+
+	<select id="getMarker" parameterType="map" resultMap="marker">
+		select
+		content_id,content_type_id, title, addr1, addr2, first_image, readcount, latitude, longitude, sido_code, gugun_code
+		from attraction_info
+		where content_type_id = #{contentTypeId} and sido_code = #{sidoCode} and gugun_code = #{gugunCode}
+	</select>
+
+	<select id="getMarkerById" parameterType="int" resultMap="marker">
+		select
+			content_id,content_type_id, title, addr1, addr2, first_image, readcount, latitude, longitude, sido_code, gugun_code
+		from attraction_info
+		where content_id = #{contentTypeId}
+	</select>
+
+</mapper>

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d93d5fee6cd28f63b0a939d4cdd9b293ed59f38d279212b5a3d59353d312175c
-size 597
+package com.ssafy.enjoytrip.map.model.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.ssafy.enjoytrip.map.model.dto.GugunDto;
+import com.ssafy.enjoytrip.map.model.dto.MarkerDto;
+import com.ssafy.enjoytrip.map.model.dto.SidoDto;
+
+@Mapper
+public interface MapDao {
+	List<SidoDto> getSido() throws SQLException;
+	List<GugunDto> getGugun(int sidoCode) throws SQLException;
+	List<MarkerDto> getMarker(int contentTypeId, int sidoCode, int gugunCode) throws SQLException;
+	MarkerDto getMarkerById(int contentId) throws SQLException;
+}

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b0b898bd9aa4fd00e90c876b00c666059975a43b89f09a16221695bb080b2cf
-size 1166
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.enjoytrip.board.model.dao.BoardDao">
+    
+    <insert id="writeArticle" parameterType="BoardDto">
+        insert into board(userId, subject, content, hit) 
+        values(#{userId},#{subject}, #{content}, #{hit})
+    </insert>
+    
+    <select id="getArticle" parameterType="int" resultType="BoardDto">
+    	select *
+    	from board
+    	where articleNo = #{articleNo}
+    </select>
+    
+    <select id="listArticle" parameterType="Map" resultType="BoardDto">
+    	select *
+    	from board
+    	order by articleNo
+    </select>
+    
+    <update id="modifyArticle" parameterType="BoardDto">
+    	update board set subject=#{subject}, content=#{content}, registerTime=now()
+    	where articleNo=#{articleNo}
+    </update>
+    
+    <delete id="deleteArticle" parameterType="int">
+    	delete from board
+    	where articleNo=#{articleNo}
+    </delete>
+    
+    <update id="updateHit" parameterType="int">
+    	update board set hit=hit+1 where articleNo=#{articleNo}
+    </update>
+</mapper>
